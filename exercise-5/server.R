@@ -25,7 +25,6 @@ shinyServer(function(input, output) {
     #The x axis will be the level of education
     #The y axis will be the level of agreement or disagreement
     #The dataset used will be filtered by sex
-    output$rolePlot <- renderPlot({
     
     #Filter the dataset based on whether the input is Men, Women, or Both
     if(input$sex == 'Men') {
@@ -50,7 +49,6 @@ shinyServer(function(input, output) {
     #(this will allow you to visually see the difference between Men and Women when Both are selected)
     ggplot(plot.data, aes(x=education, y=thoughts, color=factor(sex))) + geom_point()
       
-    })
   })
   
 })
